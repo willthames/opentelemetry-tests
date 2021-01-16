@@ -1,0 +1,34 @@
+version: "3.9"
+services:
+  fe:
+    build: fe
+    ports:
+      - "3000:3000"
+    environment:
+      WRITE_KEY: 37a642cd5bc594ecabc91a48f9a0490f
+  be:
+    build: be
+    ports:
+      - "4000:4000"
+    environment:
+      PGDATABASE: items
+      PGUSER: items
+      PGPASSWORD: items
+      PGHOST: db
+      WRITE_KEY: 37a642cd5bc594ecabc91a48f9a0490f
+  echo:
+    image: mendhak/http-https-echo
+    ports:
+      - "5000:5000"
+    environment:
+      HTTP_PORT: "5000"
+  db:
+    image: postgres:11.10
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: items
+      POSTGRES_USER: items
+      POSTGRES_PASSWORD: items
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql

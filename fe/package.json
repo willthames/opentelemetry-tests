@@ -1,0 +1,21 @@
+{
+  "name": "opentelemetry-tests",
+  "version": "1.0.0",
+  "description": "Tests on how well automatic wiring works",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@koa/router": "^10.0.0",
+    "@opentelemetry/exporter-zipkin": "^0.14.0",
+    "@opentelemetry/koa-instrumentation": "^0.12.0",
+    "@opentelemetry/node": "^0.14.0",
+    "@opentelemetry/plugin-http": "^0.14.0",
+    "@opentelemetry/plugin-https": "^0.14.0",
+    "@opentelemetry/propagator-b3": "^0.14.0",
+    "@opentelemetry/tracing": "^0.14.0",
+    "axios": "^0.21.1",
+    "koa": "^2.13.1",
+    "node-fetch": "^2.6.1",
+    "opentelemetry-exporter-honeycomb": "https://github.com/willthames/opentelemetry-exporter-honeycomb#5d3f544abc80fefd4bb785e99b58edbb5f8c2799"
+  }
+}
